@@ -3,16 +3,16 @@
   <div class="home container-fluid text-light">
     <div class="row logo-row">
       <h1 class="col-md-9 col-12 logo">save.space</h1>
-      <button class="btn btn-outline-light col-2 demo-btn">30 second demo</button>
+      <button class="btn btn-outline-light col-2 demo-btn" onclick="toDemo()">30 second demo</button>
     </div>
     <div class="row textarea-row">
       <textarea class="col-md-4 col-10 offset-1" placeholder="Your event name..."></textarea>
     </div>
     <div class="row create-space-row">
-      <button class="btn btn-primary col-md-3 col-10 offset-1 space-btn">Create Space</button>
+      <button class="btn btn-primary col-md-3 col-10 offset-1 space-btn" onclick="createSpace()">Create Space</button>
     </div>
     <div class="row">
-      <p class="offset-1 mt-3 find-space col-md-2 col-6 selectable">Find a Space</p>
+      <p class="offset-1 mt-3 find-space col-md-2 col-6 selectable" onclick="findSpace()">Find a Space</p>
     </div>
     <div class="row slogan-text-row">
       <h2 class="col-3 offset-1 slogan">
