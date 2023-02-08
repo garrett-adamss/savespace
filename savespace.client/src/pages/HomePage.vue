@@ -6,16 +6,17 @@
       <button class="btn btn-outline-light col-2 demo-btn" onclick="toDemo()">30 second demo</button>
     </div>
     <div class="row textarea-row">
-      <textarea class="col-md-4 col-10 offset-1" placeholder="Your event name..."></textarea>
+      <!-- v-model="editable.name" -->
+      <textarea class="col-md-4 col-10 offset-1" placeholder="Your event name..." ></textarea> 
     </div>
     <div class="row create-space-row">
       <button class="btn btn-primary col-md-3 col-10 offset-1 space-btn" onclick="createSpace()">Create Space</button>
     </div>
     <div class="row">
-      <p class="offset-1 mt-3 find-space col-md-2 col-6 selectable" onclick="findSpace()">Find a Space</p>
+      <p class="offset-1 mt-3 find-space col-md-2 col-6 selectable" type="submit" onclick="findSpace()">Find a Space</p>
     </div>
     <div class="row slogan-text-row">
-      <h2 class="col-3 offset-1 slogan">
+      <h2 class="col-3 offset-1 slogan ">
         Collect all <br/> your photos. <br/> In one place
       </h2>
     </div>
@@ -23,9 +24,23 @@
 </template>
 
 <script>
+import { ref } from 'vue'
+import { logger } from '../utils/Logger'
+import Pop from '../utils/Pop'
 export default {
   setup() {
-    return {}
+    const editable = ref ({isPrivate: false})
+    return {
+      async createSpace(){
+        try {
+          //  await spaceService.createSpace(editable.value)
+        }
+        catch (error) {
+          logger.error(error)
+          Pop.toast(error.message, 'error')
+        }
+      }
+    }
   }
 }
 </script>
@@ -116,6 +131,8 @@ export default {
 }
 .find-space:hover{
   cursor: pointer;
+  background-color: transparent;
+  text-decoration: none;
 }
 .slogan-text-row{
   margin-top: 5vh;
